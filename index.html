@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3RD SEM SGPA Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('rtuimag.jpeg'); /* Replace 'background-image.jpg' with the path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #calculator {
+            background-color: rgba(234, 194, 37, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <h1>3RD SEM SGPA CALCULATOR</h1>
+        <h1>CREATED BY GAURAV KUMAR LAKHERA</h1>
+        <h2>CGPA Calculator</h2>
+        <form id="cgpaForm">
+            <label for="subject1">Technical communication</label>
+            <select id="subject1" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject2">AEM</label>
+            <select id="subject2" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject3">DE</label>
+            <select id="subject3" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject4">DSA</label>
+            <select id="subject4" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject5">OOPS</label>
+            <select id="subject5" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject6">SE</label>
+            <select id="subject6" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject7">DSA LAB</label>
+            <select id="subject7" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject8">OOPS LAB</label>
+            <select id="subject8" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject9">SE LAB</label>
+            <select id="subject9" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject10">DE LAB</label>
+            <select id="subject10" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject11">ITS</label>
+            <select id="subject11" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+            <label for="subject12">DECA</label>
+            <select id="subject12" class="grade">
+                <option value="10.0">A++</option>
+                <option value="9.0">A+</option>
+                <option value="8.5">A</option>
+                <option value="8.0">B+</option>
+                <option value="7.5">B</option>
+                <option value="7.0">C+</option>
+                <option value="6.5">C</option>
+                <option value="6.0">D+</option>
+                <option value="5.5">D</option>
+                <option value="5.0">E+</option>
+                <option value="4.0">E</option>
+                <option value="0.0">F</option>
+            </select>
+
+            <!-- Repeat the above code for subjects 2 to 11 -->
+
+            <button type="button" id="calculateButton">Calculate CGPA</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Define fixed credits for each subject
+        const credits = {
+            subject1: 2,
+            subject2: 3,
+            subject3: 3,
+            subject4: 3,
+            subject5: 3,
+            subject6: 3,
+            subject7: 1.5,
+            subject8: 1.5,
+            subject9: 1.5,
+            subject10:1.5,
+            subject11:1,
+            subject12:0.5,
+            // Add credits for subjects 4 to 11 as needed
+        };
+
+        document.getElementById("calculateButton").addEventListener("click", function() {
+            const gradeElements = document.querySelectorAll(".grade");
+            let totalCredits = 0;
+            let totalGradePoints = 0;
+
+            gradeElements.forEach((gradeElement, index) => {
+                const selectedGrade = parseFloat(gradeElement.value);
+                const subjectId = `subject${index + 1}`;
+
+                if (!isNaN(selectedGrade)) {
+                    const credit = credits[subjectId];
+                    totalCredits += credit;
+                    totalGradePoints += selectedGrade * credit;
+                }
+            });
+
+            const cgpa = totalGradePoints / totalCredits;
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Your CGPA is: ${cgpa.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
