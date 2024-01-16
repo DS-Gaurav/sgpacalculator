@@ -267,26 +267,39 @@
             // Add credits for subjects 4 to 11 as needed
         };
 
-        document.getElementById("calculateButton").addEventListener("click", function() {
-            const gradeElements = document.querySelectorAll(".grade");
-            let totalCredits = 0;
-            let totalGradePoints = 0;
+       document.getElementById("calculateButton").addEventListener("click", function() {
+    const gradeElements = document.querySelectorAll(".grade");
+    let totalCredits = 0;
+    let totalGradePoints = 0;
+    let hasFailed = false; // Flag to track if any subject has failed
 
-            gradeElements.forEach((gradeElement, index) => {
-                const selectedGrade = parseFloat(gradeElement.value);
-                const subjectId = `subject${index + 1}`;
+    gradeElements.forEach((gradeElement, index) => {
+        const selectedGrade = parseFloat(gradeElement.value);
+        const subjectId = `subject${index + 1}`;
 
-                if (!isNaN(selectedGrade)) {
-                    const credit = credits[subjectId];
-                    totalCredits += credit;
-                    totalGradePoints += selectedGrade * credit;
-                }
-            });
+        if (!isNaN(selectedGrade)) {
+            if (selectedGrade === 0) {
+                // If the grade is 0 (F), set the flag and break out of the loop
+                hasFailed = true;
+                return;
+            }
 
-            const cgpa = totalGradePoints / totalCredits;
-            const resultElement = document.getElementById("result");
-            resultElement.textContent = `Your CGPA is: ${cgpa.toFixed(2)}`;
-        });
+            const credit = credits[subjectId];
+            totalCredits += credit;
+            totalGradePoints += selectedGrade * credit;
+        }
+    });
+
+    if (hasFailed) {
+        const resultElement = document.getElementById("result");
+        resultElement.textContent = "You have failed in one or more subjects. Your CGPA is 0.";
+    } else {
+        const cgpa = totalGradePoints / totalCredits;
+        const resultElement = document.getElementById("result");
+        resultElement.textContent = `Your CGPA is: ${cgpa.toFixed(2)}`;
+    }
+});
+
     </script>
 </body>
 </html>
